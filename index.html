@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <img src="images/logo.png" alt="" style="width: 5.5rem; height: auto; margin-top: 0.9rem; margin-right: 0.9rem;">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <main class="main">
+            <div class="main__wrapper">
+                <section class="search">
+                    <img src="images/logo.png" alt="" class="search__logo">
+                    <div class="search_block">
+                        <div class="search__input-block">
+                            <input class="search__input" type="text" placeholder="Найдётся всё">
+                        </div>
+                        <button class="search__button">Найти</button>
+                    </div>
 
-        <div class="info-column">
-            <div class="line-block">
-                <input class="input-line" type="text" placeholder="Найдётся всё">
-                <button class="search-button">Найти</button>
-            </div>
+                </section>
+                <div class="section_wrapper">
+                    <section class="errors">
+                        <div class="errors__content">
+                            <h1 class="errors__h1">Ошибка 404. Нет такой страницы</h1>
+                            <p>Если вы считаете, что страницы нет по нашей вине, <a class="link" href="#">напишите нам</a>.</p>
+                        </div>
+                    </section>
 
-            <div>
-                <h1 style="font-weight: 500;">Ошибка 404. Нет такой страницы</h2>
-                Если вы считаете, что страницы нет по нашей вине, <a href="">напишите нам</a>.
+                    <section class="services">
+                        <ul class="services__list">
+                            <li><img src="images/plus1.svg" class="mini-icon"><a href="" class="link">Маркет</a> —  смартфоны Huawei</li>
+                            <li><img src="images/plus1.svg" class="mini-icon"><a href="" class="link">Плюс</a> —  теперь и для семьи</li>
+                            <li><img src="images/plus1.svg" class="mini-icon"><a href="" class="link">Музыка</a> —  подкасты где угодно</li>
+                            <li><img src="images/plus1.svg" class="mini-icon"><a href="" class="link">Кинопоиск</a> —  «Нулевой пациент»</li>
+                            <li><img src="images/plus1.svg" class="mini-icon"><a href="" class="link">Практикум</a> —  стать аналитиком</li>
+                            <li><img src="images/plus1.svg" class="mini-icon"><a href="" class="link">Едадил</a> —  скидки в супермаркетах</li>
+                            <li><img src="images/plus1.svg" class="mini-icon"><a href="" class="link">Толока</a> —  удалённый заработок</li>
+                        </ul>
+                    </section>
+                </div>
             </div>
-            
-            <div style="display: flex; justify-content: flex-start; width: 70%">
-                <ul class="services-column">
-                    <li><img src="images/plus1.svg" class="mini-icon"><a href="">Маркет</a> —  смартфоны Huawei</li>
-                    <li><img src="images/plus1.svg" class="mini-icon"><a href="">Плюс</a> —  теперь и для семьи</li>
-                    <li><img src="images/plus1.svg" class="mini-icon"><a href="">Музыка</a> —  подкасты где угодно</li>
-                    <li><img src="images/plus1.svg" class="mini-icon"><a href="">Кинопоиск</a> —  «Нулевой пациент»</li>
-                </ul>
+        </main>
 
-                <ul class="services-column">
-                    <li><img src="images/plus1.svg" class="mini-icon"><a href="">Практикум</a> —  стать аналитиком</li>
-                    <li><img src="images/plus1.svg" class="mini-icon"><a href="">Едадил</a> —  скидки в супермаркетах</li>
-                    <li><img src="images/plus1.svg" class="mini-icon"><a href="">Толока</a> —  удалённый заработок</li>
-                </ul>
+        <footer class="footer">
+            <div class="footer__links">
+                <a class="footer-link" href="#">Компания</a>
+                <a class="footer-link" href="#">About</a>
+                <a class="footer-link" href="#">&copy;Яндекс</a>
             </div>
-        </div>
-    </div>
-    <footer style="display: flex; position: fixed; bottom: 25px; justify-content: flex-start; margin-left: 2rem;">
-        <a href="#" class="link">Компания</a>
-        <a href="#" class="link">About</a>
-        <a href="#" class="link">&copy;Яндекс</a>
-    </footer>
-</body>
+        </footer>
+    </body>
 </html>
