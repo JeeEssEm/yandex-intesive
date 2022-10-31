@@ -1,0 +1,78 @@
+export const categories = [
+  {
+    id: "a757a0e9-03c1-4a2a-b384-8ac21dbe2fb2",
+    name: "Нехудожественная литература",
+    books: [
+      {
+        id: "d75f762a-eadd-49be-8918-ed0daa8dd024",
+        name: "название",
+        price: 12,
+        author: "автор",
+        genre: "жанр",
+        orders: 2,
+        stars: 5,
+      },
+      {
+        id: "d75f762a-eadd-49be-8918-ed0daa8dd025",
+        name: "фывфы",
+        price: 12,
+        author: "BRFF",
+        genre: "КРИНЖ",
+        orders: 0,
+        stars: 2,
+      },
+      {
+        id: "d75f762a-eadd-49be-8918-ed0daa8dd026",
+        name: "Путь к победе",
+        price: 12,
+        author: "Zeus",
+        genre: "Киберспорт",
+        orders: 999,
+        stars: 5,
+      },
+      {
+        id: "d75f752a-eadd-49be-8918-ed0daa8dd025",
+        name: "Путь к успеху",
+        price: 12,
+        author: "Николай Соболев",
+        genre: "Успешный успех",
+        orders: 0,
+        stars: 2,
+      },
+    ],
+  },
+
+  {
+    id: "a757a0e9-03c1-4a2a-b384-8ac21dbe2fb3",
+    name: "Художественная литература",
+    books: [
+      {
+        id: "d75f762a-eadd-49be-8918-ed0daa8dd124",
+        name: "название",
+        price: 6,
+        author: "автор",
+        genre: "жанр",
+        orders: 2,
+        stars: 1,
+      },
+      {
+        id: "d75f762a-eadd-49be-8918-ed0daa8dd225",
+        name: "фывфы",
+        price: 12,
+        author: "eveloh",
+        genre: "КРИНЖ",
+        orders: 0,
+        stars: 0,
+      },
+      {
+        id: "d75f762a-eadd-49be-8918-ed0daa8dd326",
+        name: "Путь к победе",
+        price: 1,
+        author: "s1mple",
+        genre: "Киберспорт",
+        orders: 998,
+        stars: 3,
+      },
+    ],
+  },
+];

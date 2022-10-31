@@ -1,0 +1,51 @@
+.book {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid gray; */
+  border-radius: 20px;
+  background-color: white;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.price,
+.title {
+  margin: 0;
+}
+
+.author,
+.genre {
+  color: gray;
+}
+
+.crement {
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  padding: 2px;
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+}
+
+.crement:disabled {
+  background-color: rgba(0, 0, 0, 50%);
+}
+
+.crement:hover {
+  background-color: rgba(0, 0, 0, 90%);
+}
+
+.purchase {
+  display: flex;
+  gap: 0.5em;
+  font-size: 24px;
+}

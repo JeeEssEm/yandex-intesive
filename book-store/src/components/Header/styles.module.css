@@ -1,0 +1,12 @@
+.root {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  margin-bottom: 5rem;
+}
+
+.text {
+  margin-left: 2rem;
+}
