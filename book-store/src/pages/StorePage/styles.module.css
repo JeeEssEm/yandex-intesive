@@ -17,18 +17,20 @@
   flex-direction: column;
   margin-left: auto;
   width: 90%;
-  min-height: 60%;
+  min-height: 500px;
   background-color: white;
   border-radius: 8px;
 }
 
-.button {
+.button,
+.active {
   border: none;
   background: none;
   font-size: 1.5em;
   margin: 0.5rem 0;
+  word-wrap: break-word;
 }
 
-.button:focus {
+.active {
   font-weight: bold;
 }

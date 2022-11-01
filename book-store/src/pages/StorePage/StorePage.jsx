@@ -9,7 +9,7 @@ export const StorePage = (props) => {
             <div className={styles.inner}>
                 {
                     props.categories.map((category) =>
-                     <button className={styles.button}
+                     <button className={activeCategory === category ? styles.active : styles.button}
                       key={category.id} onClick={() => setActiveCategory(category)}>
                         {category.name}
                     </button>)
