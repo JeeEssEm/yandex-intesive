@@ -6,7 +6,7 @@ export const categories = [
       {
         id: "6MFnA4IWhIkiOmb5Q9dB9BMMFTXcoSiF",
         name: "Отцы и дети",
-        price: 462,
+        price: 500,
         author: "Тургенев И. С.",
         genre: "Классика",
         orders: 0,
@@ -20,7 +20,7 @@ export const categories = [
       {
         id: "eWLO2mrLFTjGyAZ2p7Z8vKqRvJcWmhvU",
         name: "Мёртвые души",
-        price: 462,
+        price: 322,
         author: "Гоголь Н. В.",
         genre: "Классика",
         orders: 0,
@@ -34,7 +34,7 @@ export const categories = [
       {
         id: "11hX0Pbz9DmojxHf2Wbs0cFekQELmKsA",
         name: "Герой нашего времени",
-        price: 462,
+        price: 192,
         author: "Лермонтов М. Ю.",
         genre: "Классика",
         orders: 0,
@@ -157,7 +157,7 @@ export const categories = [
     name: "Образование",
     books: [
       {
-        id: "d75f762a-eadd-49be-8918-ed0daa8dd024",
+        id: "d75f762a-eadd-49be-8918-ed0daa8dd135",
         name: "Русский язык. Литература. Итоговое выпускное сочинение в 11 классе 2022-2023 учебный год",
         price: 462,
         author: "Нарушевич А.Г., Нарушевич И.С.",
