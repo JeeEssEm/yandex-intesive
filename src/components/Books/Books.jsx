@@ -1,10 +1,37 @@
-import {Book} from "../Book/Book";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loadBooksIfNotExist } from "../../Store/book/loadBooksIfNotExist";
+import { selectIsBooksLoading } from "../../Store/book/selectors";
+import { selectCategoryBookIds } from "../../Store/category/selectors";
+import { Book } from "../Book/Book";
 import styles from "./styles.module.css";
 
-export const Books = ({books}) => {
-    return <div className={styles.root}>
-            {
-                books.map((book) => <Book book={book} key={book.id}/>)
-            }
+export const Books = ({ categoryId }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadBooksIfNotExist(categoryId));
+  }, [categoryId]);
+
+  const bookIds = useSelector((state) =>
+    selectCategoryBookIds(state, categoryId)
+  );
+
+  const isLoading = useSelector((state) => selectIsBooksLoading(state));
+
+  if (isLoading) {
+    return <h1>Загрузка...</h1>;
+  }
+
+  if (!bookIds) {
+    return null;
+  }
+
+  return (
+    <div className={styles.root}>
+      {bookIds.map((id) => (
+        <Book bookId={id} key={id} />
+      ))}
     </div>
-}
+  );
+};

@@ -7,7 +7,7 @@ router.get("/categories", (req, res, next) => {
 });
 
 router.get("/books", (req, res, next) => {
-  const { categoryId, filmId } = req.query;
+  const { categoryId, bookId } = req.query;
   let result = books;
 
   if (categoryId) {
@@ -17,8 +17,8 @@ router.get("/books", (req, res, next) => {
     }
   }
 
-  if (!categoryId && filmId) {
-    result = getById(result)(filmId);
+  if (!categoryId && bookId) {
+    result = getById(result)(bookId);
   }
   reply(res, result);
 });

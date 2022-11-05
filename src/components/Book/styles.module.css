@@ -8,6 +8,8 @@
   /* margin-bottom: 2rem; */
   height: 100%;
   box-sizing: border-box;
+  text-decoration: none;
+  color: black;
 }
 
 .row {
