@@ -1,0 +1,17 @@
+.books {
+  width: 60%;
+  margin-right: auto;
+}
+
+.order {
+  width: 30%;
+  min-height: 400px;
+  background-color: white;
+  margin-left: auto;
+  border-radius: 8px;
+}
+
+.root {
+  display: flex;
+  gap: 2rem;
+}

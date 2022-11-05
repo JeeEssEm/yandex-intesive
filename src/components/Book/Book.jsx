@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectBookById } from "../../Store/book/selectors";
 import { selectBookCount } from "../../Store/cart/selectors";
@@ -24,8 +23,10 @@ export const Book = ({ bookId }) => {
   }
 
   return (
-    <NavLink className={styles.book} to={`/books/${bookId}`}>
-      <h2 className={styles.title}>{book.name}</h2>
+    <div className={styles.book}>
+      <NavLink to={`/books/${bookId}`} className={styles.navlink}>
+        <h2 className={styles.title}>{book.name}</h2>
+      </NavLink>
 
       <div className={styles.row}>
         <div>
@@ -37,7 +38,7 @@ export const Book = ({ bookId }) => {
         <div className={styles.purchase}>
           <button
             onClick={() => dispatch(cartSlice.actions.removeBook(bookId))}
-            disabled={count === 0}
+            disabled={count === 0 || !count}
             className={styles.crement}
           >
             -
@@ -53,6 +54,6 @@ export const Book = ({ bookId }) => {
       </div>
 
       <h2 className={styles.price}>{book.price}₽</h2>
-    </NavLink>
+    </div>
   );
 };

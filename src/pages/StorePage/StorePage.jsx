@@ -7,19 +7,25 @@ import { NavLink, Outlet } from "react-router-dom";
 
 export const StorePage = () => {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => selectCategories(state));
-  // const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   useEffect(() => {
     dispatch(loadCategoryIfNotExist);
   }, []);
+
+  const categories = useSelector((state) => selectCategories(state));
 
   return (
     <div className={styles.root}>
       <section className={styles.categories}>
         <div className={styles.inner}>
           {categories.map((category) => (
-            <NavLink to={category.id} key={category.id}>
+            <NavLink
+              to={category.id}
+              key={category.id}
+              className={({ isActive }) =>
+                isActive ? styles.active : styles.button
+              }
+            >
               {category.name}
             </NavLink>
           ))}

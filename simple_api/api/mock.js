@@ -1,12 +1,12 @@
 const normalizedCategories = [
   {
-    id: "h9Z?D!(TWCG5@NptO4#",
+    id: "b739863dc1100995967cf266759cefd1",
     name: "Художественная литература",
     books: [
       "6MFnA4IWhIkiOmb5Q9dB9BMMFTXcoSiF",
       "eWLO2mrLFTjGyAZ2p7Z8vKqRvJcWmhvU",
       "11hX0Pbz9DmojxHf2Wbs0cFekQELmKsA",
-      "<!@WY,KJ&b~03z{[x8D<[IVkB9sFa.)9c|bZPyBmjrDAR~x:_8l:GUz<?=j,at2",
+      "a2664569f92d5d607a67084d7ed82564",
     ],
   },
   {
@@ -59,7 +59,7 @@ const normalizedBooks = [
     reviews: [],
   },
   {
-    id: "<!@WY,KJ&b~03z{[x8D<[IVkB9sFa.)9c|bZPyBmjrDAR~x:_8l:GUz<?=j,at2",
+    id: "a2664569f92d5d607a67084d7ed82564",
     name: "Капитанская дочка",
     price: 462,
     author: "Пушкин А. С.",

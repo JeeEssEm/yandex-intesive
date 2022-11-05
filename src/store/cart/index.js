@@ -1,4 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { bindActionCreators, createSlice } from "@reduxjs/toolkit";
+import { startTransition } from "react";
+
+const removeProp = (key, state) => {
+  return Object.keys(state)
+    .filter((prop) => prop != key)
+    .reduce((initObj, objKey) => {
+      initObj[objKey] = state[objKey];
+      return initObj;
+    }, {});
+};
 
 export const cartSlice = createSlice({
   name: "cart",
@@ -8,8 +18,14 @@ export const cartSlice = createSlice({
       state[action.payload] = (state[action.payload] || 0) + 1;
     },
     removeBook: (state, action) => {
-      state[action.payload] =
-        state[action.payload] === 0 ? 0 : state[action.payload] - 1;
+      if (state[action.payload] >= 1) {
+        state[action.payload] = state[action.payload] - 1;
+      }
+
+      if (state[action.payload] === 0) {
+        state = removeProp(action.payload, state);
+      }
+      console.log(Object.keys(state));
     },
   },
 });

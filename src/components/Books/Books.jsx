@@ -6,25 +6,21 @@ import { selectCategoryBookIds } from "../../Store/category/selectors";
 import { Book } from "../Book/Book";
 import styles from "./styles.module.css";
 
-export const Books = ({ categoryId }) => {
-  const dispatch = useDispatch();
+export const Books = ({ bookIds }) => {
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(loadBooksIfNotExist(categoryId));
-  }, [categoryId]);
+  // useEffect(() => {
+  //   dispatch(loadBooksIfNotExist(categoryId));
+  // }, [categoryId]);
 
-  const bookIds = useSelector((state) =>
-    selectCategoryBookIds(state, categoryId)
-  );
+  // const bookIds = useSelector((state) =>
+  //   selectCategoryBookIds(state, categoryId)
+  // );
 
   const isLoading = useSelector((state) => selectIsBooksLoading(state));
 
   if (isLoading) {
     return <h1>Загрузка...</h1>;
-  }
-
-  if (!bookIds) {
-    return null;
   }
 
   return (
