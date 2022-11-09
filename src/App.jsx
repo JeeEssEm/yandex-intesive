@@ -1,7 +1,7 @@
 import { Layout } from "./components/Layout/Layout";
 import { StorePage } from "./pages/StorePage/StorePage";
 import { BookPage } from "./pages/BookPage/BookPage";
-import { store } from "./Store";
+import { store } from "./store";
 import { Provider } from "react-redux";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -14,7 +14,7 @@ export function App() {
       <BrowserRouter>
         <Layout>
           <Routes>
-            <Route path="/categories" element={<StorePage />}>
+            <Route path="/" element={<StorePage />}>
               <Route path=":categoryId" element={<Category />}></Route>
             </Route>
 

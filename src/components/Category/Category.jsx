@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { selectCategoryById } from "../../Store/category/selectors";
+import { selectCategoryById } from "../../store/category/selectors";
 import { Books } from "../Books/Books";
 import styles from "./styles.module.css";
 import { Outlet } from "react-router-dom";
-import { selectCategoryBookIds } from "../../Store/category/selectors";
-import { loadBooksIfNotExist } from "../../Store/book/loadBooksIfNotExist";
+import { selectCategoryBookIds } from "../../store/category/selectors";
+import { loadBooksIfNotExist } from "../../store/book/loadBooksIfNotExist";
 
 export const Category = () => {
   const dispatch = useDispatch();

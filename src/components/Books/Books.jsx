@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadBooksIfNotExist } from "../../Store/book/loadBooksIfNotExist";
-import { selectIsBooksLoading } from "../../Store/book/selectors";
-import { selectCategoryBookIds } from "../../Store/category/selectors";
+import { loadBooksIfNotExist } from "../../store/book/loadBooksIfNotExist";
+import { selectIsBooksLoading } from "../../store/book/selectors";
+import { selectCategoryBookIds } from "../../store/category/selectors";
 import { Book } from "../Book/Book";
 import styles from "./styles.module.css";
 

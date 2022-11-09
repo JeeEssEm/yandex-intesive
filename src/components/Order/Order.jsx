@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { loadBookIfNotExist } from "../../Store/book/loadBookIfNotExist";
-import { selectBookById } from "../../Store/book/selectors";
+import { loadBookIfNotExist } from "../../store/book/loadBookIfNotExist";
+import { selectBookById } from "../../store/book/selectors";
 
 export const Order = (bookId) => {
   const dispatch = useDispatch();

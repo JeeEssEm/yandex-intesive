@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectBookById } from "../../Store/book/selectors";
-import { selectBookCount } from "../../Store/cart/selectors";
-import { cartSlice } from "../../Store/cart/index";
-import { loadBookIfNotExist } from "../../Store/book/loadBookIfNotExist";
+import { selectBookById } from "../../store/book/selectors";
+import { selectBookCount } from "../../store/cart/selectors";
+import { cartSlice } from "../../store/cart/index";
+import { loadBookIfNotExist } from "../../store/book/loadBookIfNotExist";
 
 import styles from "./styles.module.css";
 import { NavLink } from "react-router-dom";
@@ -21,7 +21,7 @@ export const Book = ({ bookId }) => {
   if (!book) {
     return null;
   }
-
+ 
   return (
     <div className={styles.book}>
       <NavLink to={`/books/${bookId}`} className={styles.navlink}>
@@ -32,7 +32,7 @@ export const Book = ({ bookId }) => {
         <div>
           <p className={styles.author}>{book.author}</p>
           <p className={styles.genre}>{book.genre}</p>
-          <span className={styles.stars}>{book.stars} звёзд</span>
+          <span className={styles.stars}>{book.rating} звёзд</span>
         </div>
 
         <div className={styles.purchase}>

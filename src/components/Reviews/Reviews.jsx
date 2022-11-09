@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectBookReviews } from "../../Store/book/selectors";
-import { loadReviewsIfNotExist } from "../../Store/review/loadReviewsIfNotExist";
+import { selectBookReviews } from "../../store/book/selectors";
+import { loadReviewsIfNotExist } from "../../store/review/loadReviewsIfNotExist";
 import {
   selectIsReviewsLoading,
   selectReviews,
-} from "../../Store/review/selectors";
+} from "../../store/review/selectors";
 import { Review } from "../Review/Review";
 import styles from "./styles.module.css";
 
@@ -16,9 +16,11 @@ export const Reviews = ({ bookId }) => {
     dispatch(loadReviewsIfNotExist(bookId));
   }, [bookId]);
 
+  const reviews = useSelector((state) => selectReviews(state))
+
   const reviewIds = useSelector((state) => selectBookReviews(state, bookId));
   const isLoading = useSelector((state) => selectIsReviewsLoading(state));
-  console.log(isLoading);
+  
   if (isLoading) {
     return <h1>Загрузка...</h1>;
   }

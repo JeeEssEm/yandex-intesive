@@ -1,8 +1,8 @@
 import styles from "./styles.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCategories } from "../../Store/category/selectors";
+import { selectCategories } from "../../store/category/selectors";
 import { useEffect } from "react";
-import { loadCategoryIfNotExist } from "../../Store/category/loadCategoryIfNotExist";
+import { loadCategoryIfNotExist } from "../../store/category/loadCategoryIfNotExist";
 import { NavLink, Outlet } from "react-router-dom";
 
 export const StorePage = () => {

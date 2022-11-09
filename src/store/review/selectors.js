@@ -6,9 +6,10 @@ export const selectReviews = (state) =>
   Object.values(selectReviewModule(state).entities);
 
 export const selectReviewById = (state, reviewId) => {
-  console.log(state.status);
-  return selectReviewModule(state).entities[reviewId];
+  let result = selectReviewModule(state).entities[reviewId];
+  console.log(result);
+  return result;
 };
 
 export const selectIsReviewsLoading = (state) =>
-  state.status === Statuses.inProgress;
+  selectReviewModule(state).status === Statuses.inProgress;

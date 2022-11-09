@@ -4,7 +4,7 @@ import { Annotation } from "../../components/Annotation/Annotation";
 import styles from "./styles.module.css";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectBookById } from "../../Store/book/selectors";
+import { selectBookById } from "../../store/book/selectors";
 
 export const BookPage = () => {
   const { bookId } = useParams();

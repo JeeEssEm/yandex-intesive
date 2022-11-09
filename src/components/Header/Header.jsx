@@ -5,7 +5,7 @@ import cart from "./Frame.png";
 export const Header = () => {
   return (
     <div className={styles.root}>
-      <NavLink to="/categories" className={styles.text}>
+      <NavLink to="/" className={styles.text}>
         <h2>Магазин</h2>
       </NavLink>
 

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import styles from "./styles.module.css";
-import { selectBookIdsFromCart } from "../../Store/cart/selectors";
+import { selectBookIdsFromCart } from "../../store/cart/selectors";
 import { Books } from "../../components/Books/Books";
 import { Orders } from "../../components/Orders/Orders";
 

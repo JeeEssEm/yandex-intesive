@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectReviewById } from "../../Store/review/selectors";
+import { selectReviewById } from "../../store/review/selectors";
 import styles from "./styles.module.css";
-import { selectReviews } from "../../Store/review/selectors";
+import { selectReviews } from "../../store/review/selectors";
 
 export const Review = ({ reviewId }) => {
   //const dispatch = useDispatch();
@@ -10,6 +10,9 @@ export const Review = ({ reviewId }) => {
     selectReviewById(state, reviewId);
   });
 
+  console.log("review");
+  console.log(review);
+  
   if (!review) {
     return null;
   }
