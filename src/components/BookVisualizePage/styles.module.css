@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  gap: 2.5rem;
+}
+
+.book,
+.annotation {
+  width: 50%;
+  height: 100%;
+}

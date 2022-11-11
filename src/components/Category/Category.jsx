@@ -7,6 +7,7 @@ import styles from "./styles.module.css";
 import { Outlet } from "react-router-dom";
 import { selectCategoryBookIds } from "../../store/category/selectors";
 import { loadBooksIfNotExist } from "../../store/book/loadBooksIfNotExist";
+import { loadCategoryIfNotExist } from "../../store/category/loadCategoryIfNotExist";
 
 export const Category = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,10 @@ export const Category = () => {
   );
 
   useEffect(() => {
+    dispatch(loadCategoryIfNotExist)
+  }, [])
+
+  useEffect(() => {
     dispatch(loadBooksIfNotExist(categoryId));
   }, [categoryId]);
 
@@ -24,11 +29,7 @@ export const Category = () => {
     selectCategoryBookIds(state, categoryId)
   );
 
-  if (!category) {
-    return null;
-  }
-
-  if (!bookIds) {
+  if (!category || !bookIds) {
     return null;
   }
 

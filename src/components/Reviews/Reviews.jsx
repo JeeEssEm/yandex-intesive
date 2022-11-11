@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectBookReviews } from "../../store/book/selectors";
+import { selectBookReviewIds } from "../../store/book/selectors";
 import { loadReviewsIfNotExist } from "../../store/review/loadReviewsIfNotExist";
 import {
   selectIsReviewsLoading,
@@ -16,9 +16,9 @@ export const Reviews = ({ bookId }) => {
     dispatch(loadReviewsIfNotExist(bookId));
   }, [bookId]);
 
-  const reviews = useSelector((state) => selectReviews(state))
+  // const reviews = useSelector((state) => selectReviews(state))
 
-  const reviewIds = useSelector((state) => selectBookReviews(state, bookId));
+  const reviews = useSelector((state) => selectReviews(state));
   const isLoading = useSelector((state) => selectIsReviewsLoading(state));
   
   if (isLoading) {
@@ -27,8 +27,9 @@ export const Reviews = ({ bookId }) => {
 
   return (
     <div className={styles.root}>
-      {reviewIds.map((id) => (
-        <Review key={id} reviewId={id} />
+      {
+      reviews.map((review) => (
+        <Review key={review.id} reviewId={review.id} />
       ))}
     </div>
   );

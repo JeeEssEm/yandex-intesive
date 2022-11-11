@@ -9,7 +9,8 @@ export const Review = ({ reviewId }) => {
   const review = useSelector((state) => {
     selectReviewById(state, reviewId);
   });
-
+  
+  console.log(reviewId)
   console.log("review");
   console.log(review);
   
@@ -17,7 +18,6 @@ export const Review = ({ reviewId }) => {
     return null;
   }
 
-  console.log(review);
   return (
     <div className={styles.root}>
       <div className={styles.head}>

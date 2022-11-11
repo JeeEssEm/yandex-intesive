@@ -9,8 +9,10 @@ export const selectIsBooksLoading = (state) =>
   selectBookModule(state).status === Statuses.inProgress;
 
 export const selectBookById = (state, bookId) => {
-  return selectBookModule(state).entities[bookId];
+  const res = selectBookModule(state).entities[bookId];
+  console.log(res);
+  return res;
 };
 
-export const selectBookReviews = (state, bookId) =>
+export const selectBookReviewIds = (state, bookId) =>
   selectBookModule(state).entities[bookId].reviews;

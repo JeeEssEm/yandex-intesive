@@ -15,12 +15,9 @@ export function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<StorePage />}>
-              <Route path=":categoryId" element={<Category />}></Route>
+              <Route path="/:categoryId" element={<Category />}/>
             </Route>
-
-            <Route path="/books">
-              <Route path=":bookId" element={<BookPage />} />
-            </Route>
+            <Route path="/books/:bookId" element={<BookPage />}/>
             <Route path="/cart" element={<CartPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
