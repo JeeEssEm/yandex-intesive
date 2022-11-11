@@ -2,23 +2,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loadBookIfNotExist } from "../../store/book/loadBookIfNotExist";
 import { selectBookById } from "../../store/book/selectors";
+import styles from "./styles.module.css";
+import { selectBookCount } from "../../store/cart/selectors";
 
-export const Order = (bookId) => {
+export const Order = ({bookId}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadBookIfNotExist(bookId));
-  }, [bookId]);
+    dispatch(loadBookIfNotExist(bookId))
+  }, [bookId])
 
-  const book = useSelector((state) => {
-    selectBookById(state, bookId);
-  });
+  const book = useSelector((state) => 
+    selectBookById(state, bookId)
+  );
+  const count = useSelector((state) => selectBookCount(state, bookId))
 
-  console.log(bookId);
-  console.log(book);
+  if (!book) {
+    return null;
+  }
+
   return (
-    <div>
-      {book.name} <strong>{book.price}₽</strong>
+    <div className={styles.root}>
+      {book.name} <strong>{book.price * count}₽</strong>
     </div>
   );
 };

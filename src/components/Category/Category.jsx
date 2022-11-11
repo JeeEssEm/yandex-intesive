@@ -13,13 +13,13 @@ export const Category = () => {
   const dispatch = useDispatch();
   const { categoryId } = useParams();
 
-  const category = useSelector((state) =>
-    selectCategoryById(state, categoryId)
-  );
-
   useEffect(() => {
     dispatch(loadCategoryIfNotExist)
   }, [])
+
+  const category = useSelector((state) =>
+    selectCategoryById(state, categoryId)
+  );
 
   useEffect(() => {
     dispatch(loadBooksIfNotExist(categoryId));

@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 
-export const Book = ({ bookId }) => {
+export const Book = ({ bookId }, {cart}) => {
   const dispatch = useDispatch();
 
   // useEffect(() => {
@@ -19,6 +19,10 @@ export const Book = ({ bookId }) => {
   const count = useSelector((state) => selectBookCount(state, bookId));
 
   if (!book) {
+    return null;
+  }
+  
+  if (!count && cart) {
     return null;
   }
  

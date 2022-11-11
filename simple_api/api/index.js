@@ -36,7 +36,21 @@ router.get("/reviews", (req, res, next) => {
 });
 
 router.get("/users", (req, res, next) => {
-  reply(res, users);
+  const { id } = req.query;
+  const { bookId } = req.query;
+  //const {review}
+  let result = users;
+  if (id) {
+    result = getById(users)(id);
+  } else if (bookId) {
+    result = [];
+    const book = getById(books)(bookId);
+    book.reviews.forEach((reviewId) => {
+      let userId = getById(reviews)(reviewId).user;
+      result.push(getById(users)(userId));
+    });
+  }
+  reply(res, result);
 });
 
 module.exports = router;

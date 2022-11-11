@@ -6,17 +6,7 @@ import { selectCategoryBookIds } from "../../store/category/selectors";
 import { Book } from "../Book/Book";
 import styles from "./styles.module.css";
 
-export const Books = ({ bookIds }) => {
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(loadBooksIfNotExist(categoryId));
-  // }, [categoryId]);
-
-  // const bookIds = useSelector((state) =>
-  //   selectCategoryBookIds(state, categoryId)
-  // );
-
+export const Books = ({ bookIds }, {cart}) => {
   const isLoading = useSelector((state) => selectIsBooksLoading(state));
 
   if (isLoading) {
@@ -26,7 +16,7 @@ export const Books = ({ bookIds }) => {
   return (
     <div className={styles.root}>
       {bookIds.map((id) => (
-        <Book bookId={id} key={id} />
+        <Book bookId={id} key={id} cart={cart}/>
       ))}
     </div>
   );

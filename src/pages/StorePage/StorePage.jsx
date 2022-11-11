@@ -20,7 +20,7 @@ export const StorePage = () => {
         <div className={styles.inner}>
           {categories.map((category) => (
             <NavLink
-              to={category.id}
+              to={`/categories/${category.id}`}
               key={category.id}
               className={({ isActive }) =>
                 isActive ? styles.active : styles.button

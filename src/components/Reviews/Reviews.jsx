@@ -6,6 +6,7 @@ import {
   selectIsReviewsLoading,
   selectReviews,
 } from "../../store/review/selectors";
+import { loadUsersIfNotExist } from "../../store/user/loadUsersIfNotExist";
 import { Review } from "../Review/Review";
 import styles from "./styles.module.css";
 
@@ -16,7 +17,9 @@ export const Reviews = ({ bookId }) => {
     dispatch(loadReviewsIfNotExist(bookId));
   }, [bookId]);
 
-  // const reviews = useSelector((state) => selectReviews(state))
+  useEffect(() => {
+    dispatch(loadUsersIfNotExist(bookId));
+  }, [bookId]);
 
   const reviews = useSelector((state) => selectReviews(state));
   const isLoading = useSelector((state) => selectIsReviewsLoading(state));

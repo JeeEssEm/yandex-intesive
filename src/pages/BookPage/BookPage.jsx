@@ -17,11 +17,23 @@ export const BookPage = () => {
     dispatch(loadBookIfNotExist(bookId))
   }, [bookId])
 
-  // const book = useSelector((state) => selectBookById(state, bookId));
+  const book = useSelector((state) => selectBookById(state, bookId))
   
+  if (!book) {
+    return <h1>Загрузка...</h1>
+  }
+
   return (
-    <div>
-      <BookVisualizePage bookId={bookId}/>      
+    <div className={styles.root}>
+      <div className={styles.header}>
+        <div className={styles.book}>
+          <Book bookId={bookId} />
+        </div>
+        <div className={styles.annotation}>
+          <Annotation annotation={book.annotation} />
+        </div>
+      </div>
+      <Reviews bookId={bookId} />
     </div>
   );
 };

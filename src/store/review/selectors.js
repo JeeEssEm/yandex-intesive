@@ -6,9 +6,7 @@ export const selectReviews = (state) =>
   Object.values(selectReviewModule(state).entities);
 
 export const selectReviewById = (state, reviewId) => {
-  const result = selectReviewModule(state).entities[reviewId];
-  console.log(result);
-  return result;
+  return selectReviewModule(state).entities[reviewId];
 };
 
 export const selectIsReviewsLoading = (state) =>

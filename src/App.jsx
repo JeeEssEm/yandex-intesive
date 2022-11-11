@@ -15,7 +15,7 @@ export function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<StorePage />}>
-              <Route path="/:categoryId" element={<Category />}/>
+              <Route path="/categories/:categoryId" element={<Category />}/>
             </Route>
             <Route path="/books/:bookId" element={<BookPage />}/>
             <Route path="/cart" element={<CartPage />} />

@@ -3,6 +3,7 @@ import { bookSlice } from "./book";
 import { categorySlice } from "./category";
 import { cartSlice } from "./cart";
 import { reviewSlice } from "./review";
+import { userSlice } from "./user";
 
 export const store = configureStore({
   reducer: combineReducers({
@@ -10,6 +11,7 @@ export const store = configureStore({
     book: bookSlice.reducer,
     cart: cartSlice.reducer,
     review: reviewSlice.reducer,
+    user: userSlice.reducer,
   }),
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
