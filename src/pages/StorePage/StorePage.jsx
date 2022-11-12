@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCategories } from "../../store/category/selectors";
 import { useEffect } from "react";
 import { loadCategoryIfNotExist } from "../../store/category/loadCategoryIfNotExist";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useParams, Navigate } from "react-router-dom";
 
 export const StorePage = () => {
+  const params = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -13,6 +14,13 @@ export const StorePage = () => {
   }, []);
 
   const categories = useSelector((state) => selectCategories(state));
+  if (categories.length === 0) {
+    return null;
+  }
+
+  if (Object.keys(params).length === 0) {
+    return <Navigate to={`/categories/${categories[0].id}`}></Navigate>;
+  }
 
   return (
     <div className={styles.root}>
